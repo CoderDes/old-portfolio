@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('Lato-Heavy.eot');
+    src: url('Lato-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('Lato-Heavy.woff2') format('woff2'),
+        url('Lato-Heavy.woff') format('woff'),
+        url('Lato-Heavy.svg#Lato-Heavy') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
