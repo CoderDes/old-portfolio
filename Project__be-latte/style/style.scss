@@ -807,3 +807,125 @@
         font-size: 20px;
     }
 }
+
+@media (max-width: 768px) {
+
+    .card {
+        flex-basis: 100%;
+    }
+
+    .testimonial {
+
+        &__image {
+            flex-basis: 40%;
+        }
+    }
+
+    .fotorama {
+        flex-basis: 60%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header {
+
+        &__content {
+            margin-left: 80px;
+        }
+    }
+}
+
+@media (max-width: 530px) {
+    
+    .navigation {
+
+        &__list {
+            @include flex-col();
+        }
+
+        &__item {
+            margin-top: 10px;
+        }
+
+        &__link {
+
+            &--logo {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .header {
+
+        &__content {
+            @include flex-col();
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+    }
+
+    .main {
+
+        &__wrapper {
+            flex-wrap: wrap;
+        }
+
+        &__link {
+            width: 42.80%;
+        }
+    }
+
+    .fotorama {
+        flex-basis: 100%;
+    }
+
+    .location {
+        
+        &__wrapper {
+            flex-wrap: wrap;
+        }
+
+        &__map {
+            flex-basis: 100%;
+        }
+
+        &__time {
+            flex-basis: 100%;
+        }
+
+        &:hover .location__time {
+            animation-name: time-mobile-expand;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            
+        }
+
+        &:not(:hover) .location__time {
+            animation-name: time-mobile-shrink;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        &:hover .location__map {
+            animation-name: map-mobile-shrink;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        &:not(:hover) .location__map {
+            animation-name: map-mobile-expand;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+    }
+
+    .footer {
+
+        &__address {
+            text-align: center;
+        }
+    }
+}

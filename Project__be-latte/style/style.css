@@ -864,3 +864,93 @@
   .fab:hover {
     color: var(--hover-color);
     font-size: 20px; }
+
+@media (max-width: 768px) {
+  .card {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%; }
+  .testimonial__image {
+    -ms-flex-preferred-size: 40%;
+    flex-basis: 40%; }
+  .fotorama {
+    -ms-flex-preferred-size: 60%;
+    flex-basis: 60%; } }
+
+@media (max-width: 600px) {
+  .header__content {
+    margin-left: 80px; } }
+
+@media (max-width: 530px) {
+  .navigation__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .navigation__item {
+    margin-top: 10px; }
+  .navigation__link--logo {
+    margin-bottom: 20px; }
+  .header__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+  .main__wrapper {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .main__link {
+    width: 42.80%; }
+  .fotorama {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%; }
+  .location__wrapper {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .location__map {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%; }
+  .location__time {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%; }
+  .location:hover .location__time {
+    -webkit-animation-name: time-mobile-expand;
+    animation-name: time-mobile-expand;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+  .location:not(:hover) .location__time {
+    -webkit-animation-name: time-mobile-shrink;
+    animation-name: time-mobile-shrink;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+  .location:hover .location__map {
+    -webkit-animation-name: map-mobile-shrink;
+    animation-name: map-mobile-shrink;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+  .location:not(:hover) .location__map {
+    -webkit-animation-name: map-mobile-expand;
+    animation-name: map-mobile-expand;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+  .footer__address {
+    text-align: center; } }
