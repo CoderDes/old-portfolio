@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Lavanderia';
+    src: url('Lavanderia-Sturdy.eot');
+    src: url('Lavanderia-Sturdy.eot?#iefix') format('embedded-opentype'),
+        url('Lavanderia-Sturdy.woff2') format('woff2'),
+        url('Lavanderia-Sturdy.woff') format('woff'),
+        url('Lavanderia-Sturdy.ttf') format('truetype'),
+        url('Lavanderia-Sturdy.svg#Lavanderia-Sturdy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

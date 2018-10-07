@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Novecento Wide Book';
+    src: url('Novecento-WideBook.eot');
+    src: url('Novecento-WideBook.eot?#iefix') format('embedded-opentype'),
+        url('Novecento-WideBook.woff2') format('woff2'),
+        url('Novecento-WideBook.woff') format('woff'),
+        url('Novecento-WideBook.ttf') format('truetype'),
+        url('Novecento-WideBook.svg#Novecento-WideBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

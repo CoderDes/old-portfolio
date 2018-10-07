@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Neou';
+    src: url('Neou-Thin.eot');
+    src: url('Neou-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Neou-Thin.woff2') format('woff2'),
+        url('Neou-Thin.woff') format('woff'),
+        url('Neou-Thin.ttf') format('truetype'),
+        url('Neou-Thin.svg#Neou-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+

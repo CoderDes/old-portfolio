@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Ostrich Sans Rounded';
+    src: url('OstrichSansRounded-Medium.eot');
+    src: url('OstrichSansRounded-Medium.eot?#iefix') format('embedded-opentype'),
+        url('OstrichSansRounded-Medium.woff2') format('woff2'),
+        url('OstrichSansRounded-Medium.woff') format('woff'),
+        url('OstrichSansRounded-Medium.ttf') format('truetype'),
+        url('OstrichSansRounded-Medium.svg#OstrichSansRounded-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+

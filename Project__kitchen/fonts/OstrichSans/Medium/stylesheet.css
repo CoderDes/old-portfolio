@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Ostrich Sans';
+    src: url('OstrichSans-Medium.eot');
+    src: url('OstrichSans-Medium.eot?#iefix') format('embedded-opentype'),
+        url('OstrichSans-Medium.woff2') format('woff2'),
+        url('OstrichSans-Medium.woff') format('woff'),
+        url('OstrichSans-Medium.ttf') format('truetype'),
+        url('OstrichSans-Medium.svg#OstrichSans-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
