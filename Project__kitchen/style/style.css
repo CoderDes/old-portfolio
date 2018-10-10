@@ -141,12 +141,9 @@ body {
     -o-transition-property: transform;
     transition-property: transform;
     transition-property: transform, -webkit-transform;
-    -webkit-transition-duration: 0.5s;
-    -o-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-    -webkit-transition-delay: 0.2s;
-    -o-transition-delay: 0.2s;
-    transition-delay: 0.2s; }
+    -webkit-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s; }
     .header__title::before {
       content: '';
       display: block;
@@ -222,12 +219,9 @@ body {
     -o-transition-property: transform;
     transition-property: transform;
     transition-property: transform, -webkit-transform;
-    -webkit-transition-duration: 0.5s;
-    -o-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-    -webkit-transition-delay: 0.2s;
-    -o-transition-delay: 0.2s;
-    transition-delay: 0.2s; }
+    -webkit-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s; }
     .header__subtitle:hover {
       -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);

@@ -229,8 +229,8 @@ body {
         font-size: 96px;
         color: #ffffff;
         transition-property: transform;
-        transition-duration: 0.5s;
-        transition-delay: 0.2s;
+        transition-duration: 0.2s;
+        // transition-delay: 0.2s;
 
         &::before {
             content:'';
@@ -291,8 +291,8 @@ body {
 
     &__subtitle {
         transition-property: transform;
-        transition-duration: 0.5s;
-        transition-delay: 0.2s;
+        transition-duration: 0.2s;
+        // transition-delay: 0.2s;
 
         &:hover {
             transform: scale(1.1);
