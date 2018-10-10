@@ -301,6 +301,7 @@ body {
 
     &__photo {
         @include background-cover-settings();
+        position: relative;
 
         &--1 {
             background-image: url('../images/aside/jeans-girl.jpg');
@@ -316,6 +317,23 @@ body {
 
         &--4 {
             background-image: url('../images/aside/strangers.jpg');
+        }
+
+        &::before {
+            content:'';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            visibility: hidden;
+            background-color: #ffffff;
+            opacity: 0.5;
+        }
+
+        &:hover::before {
+            visibility: visible;
         }
     }
 
@@ -375,10 +393,7 @@ body {
 }
 
 .fa-search {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+    margin-left: 14px;
 }
 
 .poster {
@@ -712,6 +727,24 @@ body {
 
     &__photo {
         @include background-cover-settings();
+        position: relative;
+
+        &::before {
+            content:'';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            visibility: hidden;
+            background-color: #ffffff;
+            opacity: 0.5;
+        }
+
+        &:hover::before {
+            visibility: visible;
+        }
 
         &--1 {
             background-image: url('../images/footer/shoes.jpg');
@@ -793,6 +826,7 @@ body {
     &__navigation {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: flex-start;
         margin-left: 92px;
     }
@@ -804,9 +838,159 @@ body {
     &__link {
         font-size: 13px;
         color: #898989;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
 
     //
     background-color: yellowgreen;
+}
+
+@media (max-width: 845px) {
+
+    body {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        // grid-template-rows:  minmax(100px, 210px) minmax(100px, 690px) 1fr minmax(100px, 201px);
+        grid-template-rows: auto auto auto auto auto auto;
+        grid-template-areas: 
+            "h h h h h h h h h h h h"
+            "p p p p p p p p p p p p"
+            "m m m m m m m m m m m m"
+            "a a a a a a a a a a a a"
+            "g g g g g g g g g g g g"
+            "f f f f f f f f f f f f";
+    }
+    
+    .header {
+
+        &__container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 1fr 80px 80px 80px;
+        }
+
+        &__form {
+            grid-row-start: 4;
+            grid-row-end: 5;
+            grid-column-start: 5;
+            grid-column-end: 9;
+            justify-content: center;
+            width: auto;
+        }
+    }
+
+    .social {
+        grid-row-start: 3;
+        grid-row-end: 4;
+        grid-column-start: 5;
+        grid-column-end: 9;
+        justify-content: center;
+
+        &__list {
+    
+        }
+    }
+
+    .footer {
+
+        &__navigation {
+            margin-left: 40px;
+            
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .grid {
+
+        &-item {
+            width: 200px;
+        }
+    }
+
+    .posts {
+
+        &__title {
+            margin-top: 10px;
+        }
+    }
+}
+
+@media (max-width: 614px) {
+
+    .header {
+        
+        &__container {
+            grid-template-rows: 1fr 1fr 80px 80px;
+        }
+
+        &__form {
+            grid-column-start: 4;
+            grid-column-end: 11;
+        }
+    }
+
+    .navigation {
+
+        &__menu {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__item {
+            margin-top: 10px;
+            margin-right: 0;
+        }
+    }
+
+    .poster {
+
+        &__title {
+            font-size: 30px;
+        }
+    }
+
+    .grid {
+
+        &-item {
+            width: 100%;
+        }
+    }
+    
+    .aside {
+        padding-left: 5px;
+    }
+
+    .footer {
+    
+        &__copyright {
+            margin-right: 40px;
+        }
+    }
+
+    .posts {
+        // margin-left: 5px;
+
+        &__gallery {
+            grid-template-columns: repeat(auto-fit, 167px);
+            grid-auto-rows: 167px;
+        }
+    }
+
+    .gallery {
+
+        &__title {
+            font-size: 25px;
+        }
+
+        &__wrapper {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-auto-rows: 300px;
+        }
+    }
 }
