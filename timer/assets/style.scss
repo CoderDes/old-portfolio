@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.timer {
+    display: flex;
+    width: 370px;
+    height: 370px;
+    font-size: 20px;
+    border: 3px solid grey;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: relative;
+    font-family: 'Sarpanch', sans-serif;
+    background-color: #fdef9f;
+
+    &__seconds {
+        width: 355px;
+        height: 355px;
+        border: 1px solid black;
+        border-radius: 50%;
+        position: absolute;
+        top: 1%;
+        left: 1%;
+    }
+
+    &__one-tenth-of-second {
+        display: inline-block;
+        width: 1px;
+        height: 177px;
+        background-color: transparent;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        transform-origin: bottom center;
+        position: absolute;
+
+        &::before {
+            content:"";
+            display: block;
+            width: 1px;
+            height: 3px;
+            position: absolute;
+            background-color: black;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
+
+        &:nth-child(11) .seconds__content {
+            left: -4px;
+        }
+    }
+
+    &__half-a-second {
+        &::before {
+            content:"";
+            height: 5px;
+        }
+
+    }
+
+    &__second {
+        &::before {
+            content:"";
+            height: 10px;
+            font-size: 5px;
+        }
+    }
+
+    &__minutes {
+        width: 155px;
+        height: 155px;
+        border: 1px solid black;
+        border-radius: 50%;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    &__half-a-minute {
+        display: inline-block;
+        width: 0.5px;
+        height: 78.5px;
+        background-color: transparent;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        transform-origin: bottom center;
+
+        &::before {
+            content:"";
+            display: block;
+            width: 1px;
+            height: 5px;
+            position: absolute;
+            background-color: black;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
+    }
+
+    &__minute {
+        &::before {
+            height: 3px;
+        }
+    }
+
+    &__five-minute {
+        &::before {
+            height: 10px;
+        }
+    }
+}
+
+.seconds__content {
+    position: absolute;
+    top: 8px;
+    left: -10px;
+    transform: translateX(-50%);
+
+    
+}
+
+.minutes__content {
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    font-size: 15px;
+}
+
+.sign {
+    display: block;
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Grand Hotel', cursive;
+    font-size: 20px;
+    text-align: center;
+}
+
+.pointer {
+    display: inline-block;
+    width: 1px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: bottom center;
+    transform: rotate(1.2deg);
+
+    &--seconds {
+        height: 177px;
+        background-color: red;
+        top: 7px;
+    }
+
+    &--minutes {
+        height: 70px;
+        background-color: black;
+        top: 8px;
+        transform: translateX(-50%);
+        
+    }
+}
+
+.button {
+    order: -1;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px 15px 0px 0px;
+    border: 1px solid gray;
+    transform: translateX(3px);
+    outline: none;
+    animation-name: start;
+
+    &--start {
+        &:active {
+            height: 27px
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
