@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.label {
+  text-align: center;
+  font-size: 35px;
+  font-weight: normal;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.field {
+  width: 30%;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-size: 25px;
+}
+
+.button {
+  background-color: lightgreen;
+  border-radius: 5px 5px 5px 5px;
+  border: 3px solid transparent;
+  padding: 10px;
+  font-size: 25px;
+  transition: 0.5s;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:hover {
+  background-color: rgb(160, 255, 160);
+  color: white;
+  border: 3px solid black;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-item {
+  display: block;
+  width: 40%;
+  background-color: lightblue;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  border-radius: 10px;
+  font-family: 'Roboto';
+  font-size: 30px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.currency {
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+.switch {
+  width: 20px;
+  height: 20px;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.wrapper--checkbox {
+  align-items: center;
+}
+
+.sell-block {
+  display: block;
+  width: 35px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(142, 223, 142);
+  color: green;
+  font-size: 10px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 15px;
+}
+
+.buy-block {
+  display: block;
+  width: 35px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(182, 74, 74);
+  color: rgb(148, 36, 36);
+  font-size: 10px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 15px;
+}

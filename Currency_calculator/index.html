@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Calculator, task 28</title>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <form class="form">
+                <label class="label" for="field">Currency calculator</label>
+                <div class="wrapper">
+                    <select class="currency">
+                        <option>Выберите валюту</option>
+                    </select>
+                    <input class="field" type="text" id="field">
+                </div>
+                <div class="wrapper wrapper--checkbox">
+                    <label class="label" for="sell">Sell</label>
+                    <input class="switch" type="checkbox" id="sell">
+                    <label class="label" for="buy">Buy</label>
+                    <input class="switch" type="checkbox" id="buy">
+                </div>
+            </form>
+            <ul class="list"></ul>
+        </div>
+        <script async src="assets/index.js"></script>
+    </body>
+</html>
