@@ -1,0 +1,158 @@
+// Mobile button
+@mixin mobileBtn($color, $hoverColor) {
+	display: none;
+
+	@media ($mdDevice) {
+		display: flex;
+		flex-shrink: 0;
+		width: $indM;
+		height: $indM;
+		transition: color $transDuration;
+		color: $color;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			color: $hoverColor;
+		}
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+// User card
+@mixin userCard {
+	display: flex;
+
+	&__avatar {
+		flex-shrink: 0;
+		width: $indXL;
+		height: $indXL;
+		border: 1px solid red;
+		border-radius: 50%;
+		background: center/100% no-repeat;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex-grow: 1;
+		align-items: flex-start;
+		margin: 0 $indXS 0 $indS;
+		overflow: hidden;
+	}
+
+	&__name {
+		@include truncate(100%);
+	}
+}
+
+// Dots menu
+@mixin dotsMenu($color, $hoverColor) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: $indM;
+	color: $color;
+	transition: color $transDuration;
+
+	&:hover,
+	&:focus {
+		color: $hoverColor;
+	}
+
+	svg {
+		width: $indS;
+	}
+}
+
+// Truncate
+@mixin truncate($max-width: 100%) {
+	max-width: $max-width;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+// Plus icon
+@mixin plusIcon($rotate: false) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: $indM;
+	height: $indM;
+	border-radius: 50%;
+	background: $clrLightBlue;
+	color: $clrWhite;
+
+	svg {
+		width: $indS;
+		height: $indS;
+
+		@if $rotate {
+			transform: rotate($rotate);
+		}
+	}
+}
+
+// Contacts tile columns
+@mixin contactCardColumn($count) {
+	--columnWidth: calc((100% + #{$indM}) / #{$count} - #{$indM});
+
+	@media ($lgDevice) {
+		--columnWidth: calc((100% + #{$indS}) / #{$count} - #{$indS});
+	}
+
+	width:  var(--columnWidth);
+	max-width:  var(--columnWidth);
+}
+
+// Form label
+@mixin labelColumn {
+	flex-direction: column;
+	align-items: flex-start;
+
+	.contact-form__label-text {
+		line-height: 1;
+		text-align: left;
+		margin-bottom: $indXS;
+	}
+}
+
+// Form input
+@mixin formInputStyle($size: 1) {
+	--boxShadowColor: #{fade-out($clrGrey, .5)};
+	width: 100% / $size;
+	border: 1px solid $clrGrey;
+	box-shadow: inset 0 0 10px 0 var(--boxShadowColor);
+	transition: box-shadow $transDuration;
+
+	&:focus {
+		--boxShadowColor: #{$clrLightBlue};
+		border-color: $clrLightBlue;
+	}
+}
+
+// Form button
+@mixin formButtonStyle($bgColor, $color, $border: false) {
+	border: 1px solid transparent;
+	background: $bgColor;
+	color: $color;
+
+	@if $border {
+		border-color: $color;
+	}
+
+	&:hover {
+		background: $color;
+		color: $bgColor;
+
+		@if $border == false {
+			border-color: $bgColor;
+		}
+	}
+}

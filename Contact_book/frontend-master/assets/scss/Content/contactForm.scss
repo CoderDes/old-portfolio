@@ -1,0 +1,193 @@
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	margin: $indM $indXL;
+
+	@media ($lgDevice) {
+		margin: $indM;
+	}
+
+	@media ($smDevice) {
+		margin: $indS;
+	}
+
+	&__close-button {
+		@include plusIcon(45deg);
+		align-self: flex-end;
+	}
+
+	&__fields-box {
+		flex-grow: 1;
+	}
+
+	&__main-info {
+		display: flex;
+		margin-bottom: $indM;
+
+		@media ($mdDevice) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__main-info-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		width: 100%;
+	}
+
+	&__label {
+		display: flex;
+		width: 100%;
+		margin-bottom: $indM;
+
+		@media ($mdDevice) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		&--file {
+			flex-shrink: 0;
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			margin-right: $indS;
+			border: 1px solid $formAvatarBorderClr;
+			background: url('../icon/file.png');
+			background-size: 100%;
+			transition: border $transDuration;
+			cursor: pointer;
+
+			@media (min-resolution: 1.5dppx) {
+				background-image: url('../icon/file@2x.png');
+			}
+
+			@media ($mdDevice) {
+				margin-right: 0;
+			}
+
+			&:hover,
+			&:focus {
+				border-color: $formMainClr;
+			}
+
+			input {
+				display: none;
+			}
+		}
+
+		&--half {
+			width: calc(50% - #{$indXS});
+
+			@media (max-width: 950px) and (min-width: 767px) {
+				width: 100%;
+			}
+
+			@media ($smDevice) {
+				width: 100%;
+			}
+
+			&:first-child {
+				margin-right: $indS;
+
+				@media (max-width: 950px) and (min-width: 767px) {
+					margin-right: 0;
+				}
+
+				@media ($smDevice) {
+					margin-right: 0;
+				}
+			}
+		}
+
+		.contact-form__main-info & {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+
+	&__label-text {
+		flex-shrink: 0;
+		width: 150px + $indS;
+		padding-right: $indS;
+		font-weight: 600;
+		text-align: right;
+		line-height: 2;
+
+		@media ($mdDevice) {
+			line-height: 1;
+			text-align: left;
+			margin-bottom: $indXS;
+		}
+
+		.contact-form__main-info & {
+			line-height: 1;
+			text-align: left;
+			margin-bottom: $indXS;
+		}
+	}
+	
+	&__input,
+	&__textarea {
+		@include formInputStyle;
+	}
+
+	&__input {
+		height: $indL;
+		padding: 0 $indS;
+	}
+
+	&__textarea {
+		padding: $indXS $indS;
+		line-height: 1.5;
+	}
+
+	&__buttons-box {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		@media ($smDevice) {
+			flex-direction: column;
+		}
+
+		&:before {
+			content: '';
+			width: 100%;
+			height: 1px;
+			background: grey;
+
+			@media ($smDevice) {
+				display: none;
+			}
+		}
+	}
+
+	&__button {
+		min-width: 140px;
+		height: $indL;
+		border-radius: $indL / 2;
+		font-size: $fontM;
+		transition: $transDuration;
+		margin-left: $indM;
+
+		@media ($smDevice) {
+			width: 100%;
+			margin-left: 0;
+
+			&:not(:last-child) {
+				margin-bottom: $indS;
+			}
+		}
+
+		&--main {
+			@include formButtonStyle($formMainClr, $formSecondClr);
+		}
+
+		&--second {
+			@include formButtonStyle($formSecondClr, $formMainClr, true);
+		}
+	}
+}

@@ -1,0 +1,109 @@
+.sidebar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	width: $sidebarWidth;
+	padding: $indM 0 0;
+	transition: transform $transDuration;
+	background: linear-gradient(to bottom, $sidebarBgClr, lighten($sidebarBgClr, 20%));
+
+	@media ($mdDevice) {
+		padding-top: $indS;
+		transform: translateX(-100%);
+
+		&--active {
+			transform: translateX(0);
+		}
+	}
+
+	&__title {
+		flex-shrink: 0;
+		margin: 0;
+		font-size: $fontL;
+		line-height: 1;
+		font-weight: 500;
+		color: $sidebarTextClr;
+		text-align: center;
+
+		@media ($mdDevice) {
+			display: none;
+		}
+	}
+
+	.mobile-menu {
+		@include mobileBtn(fade-out($sidebarTextClr, .5), $sidebarTextClr);
+		margin-left: $indM;
+	}
+}
+
+.search-form {
+	flex-shrink: 0;
+	padding: 0 $indM;
+	margin-top: $indM;
+}
+
+.user {
+	@include userCard;
+	flex-shrink: 0;
+	padding: 0 $indM;
+	margin-top: $indM;
+
+	@media ($mdDevice) {
+		margin-top: $indS;
+	}
+
+	&__name {
+		color: $sidebarTextClr;
+	}
+
+	&__log-out {
+		font-size: $fontXS;
+		color: fade-out($sidebarTextClr, .5);
+		transition: color $transDuration;
+
+		&:hover,
+		&:focus {
+			color: $sidebarTextClr;
+		}
+	}
+
+	&__menu {
+		@include dotsMenu(fade-out($sidebarTextClr, .5), $sidebarTextClr);
+	}
+}
+
+.create-contact {
+	flex-shrink: 0;
+	border-top: 1px solid fade-out($sidebarTextClr, .5);
+	margin: $indM $indM 0;
+
+	&__button {
+		display: flex;
+		align-items: center;
+		padding: $indXS $indM $indXS 0;
+		font-size: $fontM;
+		color: $sidebarTextClr;
+
+		&:hover,
+		&:focus {
+			.create-contact__text {
+				border-bottom-color: $sidebarTextClr;
+			}
+		}
+	}
+
+	&__icon {
+		@include plusIcon;
+		margin-right: $indS;
+	}
+
+	&__text {
+		border-bottom: 1px solid transparent;
+		transition: border $transDuration;
+	}
+}

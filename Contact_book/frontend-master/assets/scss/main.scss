@@ -1,0 +1,37 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'common.scss';
+
+// Sidebar
+@import 'Sidebar/sidebar.scss';
+@import 'Sidebar/sideMenu.scss';
+@import 'Sidebar/search.scss';
+@import 'Sidebar/groupsList.scss';
+@import 'Sidebar/bDayLists.scss';
+
+// Main content
+@import 'Content/mainContent.scss';
+@import 'Content/contactCard.scss';
+@import 'Content/contactForm.scss';
+@import 'Content/contactFullView.scss';
+
+// Hidden content
+.hidden {
+    display: none;
+}
+
+// Empty main without any contact
+.empty-behaviour {
+    justify-content: center;
+    align-content: center;
+}
+
+.default-text {
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.side-menu__item--birthday {
+    padding: 0 24px 16px;
+}

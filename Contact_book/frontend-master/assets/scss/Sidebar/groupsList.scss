@@ -1,0 +1,35 @@
+.groups-list {
+	display: flex;
+	flex-direction: column;
+
+	&__item {
+		position: relative;
+		flex-shrink: 0;
+		height: $indXL;
+		padding: 0 $indM;
+		font-size: $fontM;
+		text-align: left;
+		color: $sideMenuTextClr;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border-left: 3px solid $sideMenuHoverClr;
+			opacity: 0;
+			background: linear-gradient(to right, rgba(127, 142, 218, .2), transparent);
+			transition: opacity $transDuration;
+		}
+
+		&:hover,
+		&:focus,
+		&--active {
+			&:before {
+				opacity: 1;
+			}
+		}
+	}
+}

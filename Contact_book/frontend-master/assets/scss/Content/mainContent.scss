@@ -1,0 +1,59 @@
+.main-content {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	padding: 72px 0 0 $sidebarWidth;
+	background: $mainContentBgClr;
+
+	@media ($mdDevice) {
+		padding: 56px 0 0 0;
+	}
+
+	&__header {
+		position: fixed;
+		top: 0;
+		left: $sidebarWidth;
+		right: 0;
+		z-index: 10;
+		display: flex;
+		justify-content: space-between;
+		padding: $indM $indXL;
+		background: $mainContentBgClr;
+		transition: position $transDuration;
+		box-shadow: 0 0 10px 0 rgba(48, 54, 80, .2);
+
+		@media ($lgDevice) {
+			padding: $indM;
+		}
+
+		@media ($mdDevice) {
+			left: 0;
+			padding: $indS $indM;
+		}
+
+		@media ($smDevice) {
+			padding: $indS;
+		}
+
+		&-text {
+			@include truncate;
+			margin-right: $indS;
+			font-size: $fontL;
+			line-height: 1;
+			font-weight: 500;
+			color: $secondContentTextClr;
+
+			@media ($mdDevice) {
+				margin: 0 $indS;
+			}
+		}
+
+		&-menu {
+			@include dotsMenu($mainContentTextClr, $secondContentTextClr);
+		}
+
+		.mobile-menu {
+			@include mobileBtn($mainContentTextClr, $secondContentTextClr);
+		}
+	}
+}

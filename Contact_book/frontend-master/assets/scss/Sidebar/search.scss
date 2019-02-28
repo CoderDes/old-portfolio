@@ -1,0 +1,46 @@
+.search {
+	position: relative;
+
+	&__input {
+		width: 100%;
+		height: $indL;
+		padding-right: $indL;
+		border-bottom: 1px solid fade-out($searchTextClr, .5);
+		transition: border-color $transDuration;
+
+		&:focus {
+			border-bottom-color: $searchTextClr;
+			color: $searchTextClr;
+		}
+
+		&::placeholder {
+			color: fade-out($searchTextClr, .5);
+		}
+	}
+
+	&__button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		width: $indL;
+		height: $indL;
+		color: fade-out($searchTextClr, .5);
+
+		&:hover,
+		&:focus {
+			color: $searchTextClr;
+		}
+
+		svg {
+			width: $indS;
+			height: $indS;
+		}
+
+		path {
+			transition: $transDuration;
+		}
+	}
+}

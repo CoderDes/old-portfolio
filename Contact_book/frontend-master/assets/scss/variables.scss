@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+// Transition
+$transDuration: .3s;
+
+// Colors
+$clrWhite: rgba(255, 255, 255, 1);
+$clrBlack: rgba(0, 0, 0, 1);
+$clrGrey: rgba(122, 126, 129, 1);
+$clrLightBlue: rgba(16, 177, 223, 1);
+$clrDarkBlue: rgba(36, 40, 62, 1);
+
+// Sidebar
+$sidebarWidth: 320px;
+$sidebarBgClr: $clrDarkBlue;
+$sidebarTextClr: $clrWhite;
+
+// Search
+$searchTextClr: $clrWhite;
+
+// Side menu
+$sideMenuTextClr: $clrWhite;
+$sideMenuHoverClr: $clrLightBlue;
+$sideMenuBtnClr: #8992CA;
+
+// Main content
+$mainContentBgClr: $clrWhite;
+$mainContentTextClr: $clrGrey;
+$secondContentTextClr: $clrLightBlue;
+
+// Contact card
+$cardMainTextClr: $clrBlack;
+$cardSecondTextClr: $clrGrey;
+$cardHoverClr: $clrLightBlue;
+
+// Contact form
+$formMainClr: $clrLightBlue;
+$formSecondClr: $clrWhite;
+$formAvatarBorderClr: $clrGrey;
+
+// Grid
+$indentStep: 8px;
+$indXS: $indentStep;
+$indS: $indentStep * 2;
+$indM: $indentStep * 3;
+$indL: $indentStep * 4;
+$indXL: $indentStep * 6;
+
+// Font
+$fontXS: $indentStep * 1.5;
+$fontS: $indentStep * 1.75;
+$fontM: $indentStep * 2;
+$fontL: $indentStep * 3;
+
+// Media
+$smDevice: 'max-width: 450px';
+$mdDevice: 'max-width: 767px';
+$lgDevice: 'max-width: 1024px';

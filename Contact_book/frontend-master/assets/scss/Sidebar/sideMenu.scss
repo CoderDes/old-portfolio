@@ -1,0 +1,52 @@
+.side-menu {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	padding: 0;
+	margin: $indM 0 0;
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+
+		&:not(:last-child) {
+			margin-bottom: $indS;
+		}
+
+		.side-menu__item--active & {
+			flex-grow: 1;
+		}
+	}
+
+	&__item-button {
+		flex-shrink: 0;
+		width: 100%;
+		padding: 0 $indM $indS;
+		font-size: $fontXS;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+		text-align: left;
+		transition: color $transDuration;
+		color: fade-out($sideMenuTextClr, .5);
+
+		&:hover,
+		&:focus,
+		.side-menu__item--active & {
+			color: $sideMenuBtnClr;
+		}
+	}
+}
+
+.items-box {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	overflow: auto;
+	// overflow: scroll;
+	display: none;
+
+	.side-menu__item--active & {
+		display: flex;
+	}
+}

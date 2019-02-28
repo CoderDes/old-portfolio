@@ -1,0 +1,138 @@
+.contacts {
+	display: flex;
+	flex-wrap: wrap;
+	margin: $indM $indXL;
+
+	@media ($lgDevice) {
+		margin: $indM;
+	}
+
+	@media ($smDevice) {
+		margin: $indS;
+	}
+}
+
+.contact-card {
+	@include userCard;
+	@include contactCardColumn(5);
+	position: relative;
+	margin: 0 $indM $indM 0;
+
+	@media (min-width: 1601px) {
+		&:nth-child(5n) {
+			margin-right: 0;
+		}
+	}
+
+	@media (max-width: 1600px) {
+		@include contactCardColumn(4);
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
+	}
+	// оригинал
+	// @media (max-width: 1600px) and (min-width: 1201px) {
+	// 	@include contactCardColumn(4);
+	// 	&:nth-child(4n) {
+	// 		margin-right: 0;
+	// 	}
+	// }
+
+	@media (max-width: 1200px) and (min-width: 1025px)  {
+		@include contactCardColumn(3);
+		&:nth-child(3n) {
+			// margin-right: 20;
+		}
+	}
+
+	@media ($lgDevice) {
+		margin-right: $indS;
+	}
+
+	@media ($lgDevice) and (min-width: 768px) {
+		@include contactCardColumn(2);
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
+
+	@media (max-width: 767px) and (min-width: 701px) {
+		@include contactCardColumn(3);
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+	}
+
+	@media (max-width: 700px) and (min-width: 451px) {
+		@include contactCardColumn(2);
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
+
+	@media ($smDevice) {
+		@include contactCardColumn(1);
+		margin-right: 0;
+	}
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		flex-grow: 1;
+		max-width: 220px;
+
+		&:hover,
+		&:focus {
+			.contact-card__avatar {
+				border-color: $cardHoverClr;
+			}
+
+			.contact-card__name,
+			.contact-card__menu {
+				color: $cardHoverClr;
+			}
+		}
+	}
+
+	&__avatar {
+		transition: border $transDuration;
+	}
+
+	&__name {
+		font-size: $fontM;
+		color: $cardMainTextClr;
+		transition: color $transDuration;
+		// max-width: 160px;  //добавлено  
+	}
+
+	&__description {
+		@include truncate;
+		font-size: $fontXS;
+		color: $cardSecondTextClr;
+	}
+
+	&__menu-btn {
+		@include dotsMenu($cardSecondTextClr, $cardHoverClr);
+	}
+
+	&__menu {
+		position: absolute;
+		right: 0;
+		padding: 0 $indXS;
+		margin: 0;
+		border-radius: 5px;
+		background: rgba(36, 40, 62, 1);
+		color: white;
+	}
+
+	&__menu-item {
+		list-style: none;
+		min-width: 150px;
+		padding: $indXS 0;
+		font-size: $fontXS;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid;
+		}
+	}
+}

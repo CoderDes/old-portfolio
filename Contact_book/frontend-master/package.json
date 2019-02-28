@@ -1,0 +1,17 @@
+{
+  "name": "hillel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpconfig.js",
+  "scripts": {
+    "dmc": "gulp"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-sass": "^4.0.1"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
