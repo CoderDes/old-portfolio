@@ -1,0 +1,743 @@
+@import "fonts.scss";
+@import "animations.scss";
+@import "mixins.scss";
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: 'TT Squares Condensed';
+  background-color: black;
+  background-image: url('../assets/images/stadium.svg');
+  @include standart-bg-settings();
+  position: relative;
+
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/background.svg');
+    @include standart-bg-settings;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+}
+
+.header {
+  background-color: rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  display: block;
+  width: 172px;
+  height: 44px;
+  margin-top: 16px;
+  background-image: url('../assets/images/Logo.svg');
+  @include standart-bg-settings();
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+
+  &--header {
+    @include flex-row-wrap();
+    max-width: 980px;
+    justify-content: space-between;
+  }
+
+  &--main {
+    @include flex-col-wrap();
+    max-width: 1564px;
+    align-items: center;
+    position: relative;
+  }
+}
+
+.commentator {
+  width: 100%;
+  margin-top: 330px;
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper {
+  
+  &--header {
+    @include flex-row-wrap();
+    justify-content: space-around;
+    margin-top: 7px;
+    margin-bottom: 7px;  
+  }
+
+  &--advert {
+    @include flex-col-wrap();
+  }
+}
+
+.poster {
+  max-width: 323px;
+  font-weight: bold;
+  font-style: italic;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #050c30;
+  padding-right: 25px;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    display: block;
+    content: '';
+    width: 20px;
+    height: 100%;
+    background-color:#050c30;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    transform: skew(-10deg);
+    z-index: -1;
+  }
+
+  &__title {
+    margin-top: 7px;
+    margin-bottom: 0;
+    font-size: 26px;
+    text-shadow: 0 2px 0 #04121b;
+  }
+
+  &__subtitle {
+    margin-top: 5px;
+    margin-bottom: 9px;
+    font-size: 16px;
+
+    &--yellow {
+      color: #fdc000;;
+    }
+  }
+}
+
+.timer {
+  @include flex-row-wrap();
+  font-family: 'Digital-7';
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,0.7) 0%, rgba(103,103,103,0.7) 50%, rgba(3,12,60,0.3) 100%);
+  position: relative;
+  z-index: 0;
+  left: -10px;
+  transform: skew(-10deg);
+
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    height: 60px;
+    border-right: 1px solid rgba(53, 53, 53, 0.3);
+    justify-content: center;
+    align-items: center;
+    transform: skew(10deg);
+
+    &:first-child {
+      padding-left: 15px;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  &__digits {
+    color: #d71015;
+    font-size: 40px;
+    font-weight: 400;
+    transform: skew(0deg);
+  }
+
+  &__sign {
+    font-family: "TT Squares Condensed";
+    font-size: 9px;
+    font-style: italic;
+    color: #ffffff;
+    transform: skew(10deg);
+    margin-left: 10px;
+  }
+}
+
+.main {
+
+  &__title {
+    margin-top: 24px;
+    margin-bottom: 0;
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 41.92px;
+    text-transform: uppercase;
+    transform: skew(-10deg);
+    position: relative;
+    z-index: 2;
+  }
+
+  &__price {
+    background: rgb(236,64,68);
+    background: linear-gradient(180deg, rgba(236,64,68,0.8830882694874825) 57%, rgba(224,0,0,0.8046568969384629) 91%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.advert {
+  @include flex-row-wrap();
+  max-width: 1022px;
+  margin-top: 15px;
+  margin-bottom: 138px;
+  background-color: #0b173a;
+  border-bottom: 1px solid transparent;
+  text-transform: uppercase;
+  box-shadow: 0px 0px 66px 22px rgba(0,0,0,1);
+  padding-left: 43px;
+  padding-right: 46px;
+  align-items: center;
+  transform: skew(-10deg);
+  position: relative;
+  z-index: 1;
+
+  &__title {
+    margin-top: 13px;
+    margin-bottom: 0;
+    font-size: 64px;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 2px 1px 6px rgba(4, 18, 27, 0.32);
+    letter-spacing: 1px;
+    padding-right: 42px;
+  }
+
+  &__subtitle {
+    margin-top: 2px;
+    margin-bottom: 17px;
+    font-size: 30px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0px;
+    
+    &--red {
+      color: #d71015;
+    }
+  }
+
+  &__button {
+    max-height: 88px;
+    background-color: #fcbf01;
+    font-size: 32px;
+    font-weight: 900;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 63px;
+    padding-left: 63px;
+    line-height: 32px;
+    color: #0b1019;
+    box-sizing: border-box;
+    animation-name: pulse;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    
+  }
+}
+
+.flickr {
+  width: 20px;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background-color: #ffffff;
+  border-radius: 50%;
+  animation-name: flickr;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+.decoration {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+
+  &__element {
+    display: block;
+    position: absolute;
+    @include standart-bg-settings();
+
+    &--flag {
+      width: 483px;
+      height: 340px;
+      background-image: url('../assets/images/British-flag.svg');
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -2;
+    }
+
+    &--billionare {
+      width: 356px;
+      height: 404px;
+      background-image: url('../assets/images/billionere.svg');
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    &--footballist-blue {
+      width: 420px;
+      height: 383px;
+      background-image: url('../assets/images/blue_footballist.svg');
+      top: 40%;
+      left: 68%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    &--footballist-sky {
+      width: 333px;
+      height: 316px;
+      background-image: url('../assets/images/like-a-gay-footballist.svg');
+      top: 40%;
+      left: 75%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    &--footballist-white {
+      width: 362px;
+      height: 329px;
+      background-image: url('../assets/images/white-footballist.svg');
+      top: 40%;
+      left: 28%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    &--footballist-red {
+      width: 404px;
+      height: 321px;
+      background-image: url('../assets/images/red-footballist.svg');
+      top: 40%;
+      left: 19%;
+      transform: translate(-50%, -50%);
+      z-index: -2;
+    }
+
+    &--big-ban {
+      width: 238px;
+      height: 360px;
+      background-image: url('../assets/images/big-ben.svg');
+      background-position: right center;
+      top: 0;
+      left: 17%;
+      z-index: -3;
+      transform: rotate(-3deg);
+      animation-name: slideOut;
+      animation-direction: normal;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: initial;
+    }
+
+    &--bridge {
+      width: 500px;
+      height: 334px;
+      background-image: url('../assets/images/tower-bridge-2262707_960_720.svg');
+      top: 0;
+      left: 50%;
+      z-index: -3;
+      animation-name: slideOut;
+      animation-direction: normal;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: initial;
+    }
+  }
+}
+
+
+@media (max-width: 1000px) {
+
+  .main {
+    overflow: hidden;
+  }
+
+  .header {
+    @include flex-row-wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    margin-bottom: 12px;
+  }
+
+  .advert {
+    padding-left: 38px;
+    padding-right: 38px;
+
+    &__title {
+      font-size: 50px;
+      padding-right: 0;
+    }
+
+    &__subtitle {
+      font-size: 23px;
+    }
+
+    &__button {
+      font-size: 25px;
+      padding-right: 30px;
+      padding-left: 30px;
+      margin-left: 14px;
+    }
+  }
+
+  .poster-block {
+    justify-content: center;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .poster {
+   
+    &__title {
+      font-size: 20px;
+    }
+
+    &__subtitle {
+      font-size: 8px;
+    }
+  }
+
+  .timer {
+
+    &__section {
+      width: 40px;
+      height: 40px;
+
+      &:first-child {
+        padding-left: 10px;
+      }
+
+      &:last-child {
+        padding-right: 10px;
+      }
+    }
+
+    &__digits {
+      font-size: 30px;
+      line-height: 23px;
+    }
+
+    &__sign {
+      margin-left: 0;
+    }
+  }
+
+  .decoration {
+    margin-top: 90px;
+
+    &__element {
+
+      &--flag {
+        width: 362px;
+        height: 254px;
+      }
+  
+      &--billionare {
+        width: 267px;
+        height: 304px;
+      }
+  
+      &--footballist-blue {
+        width: 313px;
+        height: 286px;
+      }
+  
+      &--footballist-sky {
+        width: 251px;
+        height: 237px;
+      }
+  
+      &--footballist-white {
+        width: 269px;
+        height: 247px;
+      }
+  
+      &--footballist-red {
+        width: 303px;
+        height: 240px;
+      }
+  
+      &--big-ban {
+        width: 138px;
+        height: 260px;
+        left: 9%;
+      }
+  
+      &--bridge {
+        width: 400px;
+        height: 234px;
+      }
+    }
+  }
+}
+
+@media (max-width: 760px) {
+
+  .main {
+    &__title {
+      font-size: 30px;
+    }
+  }
+
+  .poster-block {
+    width: 37%;
+    transform: translateX(-50%) skew(-10deg);
+  }
+
+  .poster {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 20px;
+
+    &::before {
+      display: none;
+    }
+
+    &__title {
+      font-size: 14px;
+      transform: skew(10deg);
+    }
+
+    &__subtitle {
+      transform: skew(10deg);
+    }
+  }
+
+  .timer {
+    width: 100%;
+    transform: skew(0deg);
+    left: 0;
+
+    &__section {
+      transform: skew(10deg);
+    }
+  }
+
+  .advert {
+    max-width: 348px;
+
+    &__title {
+      font-size: 42px;
+    }
+
+    &__subtitle {
+      font-size: 20px;
+    }
+
+    &__button {
+      font-size: 18px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 9px;
+      padding-top: 9px;
+      padding-bottom: 9px;
+      padding-right: 35px;
+      padding-left: 35px;
+    }
+
+  }
+  .decoration {
+    &__element {
+
+    }
+  }
+}
+
+@media (max-width: 555px) {
+  .main {
+    &__title {
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+  .advert {
+    max-width: 210px;
+
+    &__title {
+      font-size: 25px;
+    }
+    &__subtitle {
+      font-size: 12px;
+    }
+
+    &__button {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+  .poster {
+    &__title {
+      width: 100%;
+      text-align: center;
+    }
+    &__subtitle {
+      font-size: 8px;
+      text-align: center;
+    }
+  }
+  .timer {
+
+    &__section {
+      width: 30px;
+      height: 30px;
+    }
+
+    &__digits {
+      font-size: 20px;
+    }
+
+    &__sign {
+      margin-bottom: 5px;
+    }
+  }
+  .decoration {
+  
+    &__element {
+    
+      &--flag {
+        width: 152px;
+        height: 107px;
+        top: 13px;
+      }
+  
+      &--billionare {
+        width: 112px;
+        height: 126px;
+        top: 22%;
+      }
+  
+      &--footballist-blue {
+        width: 132px;
+        height: 119px;
+        top: 22%;
+      }
+  
+      &--footballist-sky {
+        width: 105px;
+        height: 101px;
+        top: 22%;
+      }
+  
+      &--footballist-white {
+        width: 114px;
+        height: 104px;
+        top: 22%;
+      }
+  
+      &--footballist-red {
+        width: 128px;
+        height: 101px;
+        top: 22%;
+      }
+  
+      &--big-ban {
+        width: 128px;
+        height: 101px;
+        left: 1%;
+      }
+  
+      &--bridge {
+        width: 161px;
+        height: 99px; 
+      }
+    }
+  }
+  .commentator {
+    margin-top: 200px;
+  } 
+}
+
+@media (max-width: 440px) {
+
+  .decoration {
+    &__element {
+      &--big-ban {
+        left: -6%;
+      }
+    }
+  }
+
+  .poster-block {
+    width: 50%;
+  }
+}
+
+@media (max-width: 340px) {
+
+  .poster-block {
+    width: 60%;
+  }
+
+  .main {
+    &__title {
+      font-size: 16px;
+    }
+  }
+  .wrapper {
+    &--advert {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  .advert {
+    padding-left: 0;
+    padding-right: 0;
+
+    &__title {
+      font-size: 18px;
+    }
+    &__subtitle {
+      font-size: 9px;
+    }
+  }
+
+  .decoration {
+    &__element {
+      &--big-ban {
+        left: -15%;
+      }
+    }
+  }
+}
+
+.link {
+  text-decoration: none;
+}

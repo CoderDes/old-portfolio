@@ -1,0 +1,17 @@
+@mixin standart-bg-settings {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+  
+@mixin flex-row-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@mixin flex-col-wrap {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
